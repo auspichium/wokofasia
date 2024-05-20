@@ -78,10 +78,10 @@
         <h1><a name="upload">Upload a recipe, YOUR recipe!</a></h1>
         
         <form action = "{{ url_for('uploaded')}}" method = "POST">
-            <h2>Cuisine: <input name = "cuisine"></h2>
+            <h2>Cuisine (chinese/malay/indian/others): <input name = "cuisine"></h2>
             <h2>Name of Dish: <input name = "name"></h2>
             <h2>Estimated Time (in minutes): <input name = "time"></h2>
-            <h2>Serves How Many People: <input name = "servingsize"></h2>
+            <h2>Serves How Many People (1/2/3/4...): <input name = "servingsize"></h2>
             <h2>Ingredients: <input name = "ingredients"></h2>
             <h2>Instructions: <input name = "instructions"></h2>
             <h3><input type='submit' value='Submit Recipe!'></h3>
