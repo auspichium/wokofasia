@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+    <title>WokOfAsia</title>
+    <link rel = "stylesheet" href = "{{url_for("static", filename = "wokdesign.css")}}">
+    <link rel = "icon" type = "image/x-icon" href = "{{url_for("static", filename = "wokIcon.png")}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>WokOfAsia: A Taste of Home</h1>
+
+    <div id="bigPic">
+        <img src = "{{url_for("static", filename = "wokIcon.png")}}" alt="Logo">
+    </div>    
+
+    <br>
+    <br>
+    <br>
+    
+    <div>
+        <h2>What are we feeling today?</h2>
+    </div>
+    
+    <div id="nav" class="clearfix">
+        <a href="#chinese">Chinese?</a>
+        <a href="#malay">Malay?</a>
+        <a href="#indian">Indian?</a>
+        <a href="#others">Others?</a>
+    </div> 
+
+    <br>
+    <br>
+    <br>
+    
+    <div>
+        <h2>Feeling generous? Click the button below to upload YOUR own recipe!</h2>
+    </div>
+    
+    <div id="nav" class="clearfix">
+        <a href="#upload">Upload!</a>
+    </div>
+
+    <br>
+    
+    <div class="section">
+        <h1><a name="chinese">Chinese Recipes</a></h1>
+        <p>insert chineserecipes.sql</p>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="section">
+        <h1><a name="malay">Malay Recipes</a></h1>
+        <p>insert malayrecipes.sql</p>
+    </div>
+    
+    <br>
+    <hr>
+
+    <div class="section">
+        <h1><a name="indian">Indian Recipes</a></h1>
+        <p>insert indianrecipes.sql</p>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="section">
+        <h1><a name="others">Other Recipes</a></h1>
+        <p>insert otherrecipes.sql</p>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="section">
+        <h1><a name="upload">Upload a recipe, YOUR recipe!</a></h1>
+        <table>
+            
+            <tr>
+                <td>
+                    <h2><label for="cuisine">Cuisine:</label></h2>
+                </td>
+                <td>
+                    <select name="cuisine" id="cuisine">
+                    <option value="Chinese">Chinese</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Others">Others</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><h2>Name of Food:</h2></td>
+                <td><input type="text" value=""></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h2><label for="estimated time">Estimated Time:</label></h2>
+                </td>
+                <td>
+                    <select name="estimated time">
+                    <option value="5">around 5 minutes</option>
+                    <option value="10">around 10 minutes</option>
+                    <option value="15">around 15 minutes</option>
+                    <option value="30">around half an hour</option>
+                    <option value="45">around 45 minutes</option>
+                    <option value="60">around an hour</option>
+                    <option value=">60">more than an hour</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label for="serving size">Serves How Many People:</label></td>
+                <td>
+                    <select name="serving size">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3-5">3 to 5</option>
+                        <option value="5-7">5 to 7</option>
+                        <option value="8-10">8 to 10</option>
+                        <option value=">10">more than 10</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h2>Ingredients: </td></h2><td><textarea class='special' name='ingredients'>eg. 1 cup of milk, 1 cup of water, 1 tablespoon of sugar</textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h2>Instructions: </td></h2><td><textarea class='special' name='instructions'>eg. Pour milk into bowl, Pour water into bowl, Mix well</textarea>
+                </td>
+            </tr>
+
+        </table>
+    
+        <form action = "{{ url_for('uploaded')}}" method = "POST">
+            
+            <h3><input type='submit' value='Submit Recipe!'></h3>
+        </form>
+    </div>
+</body>
