@@ -76,74 +76,14 @@
 
     <div class="section">
         <h1><a name="upload">Upload a recipe, YOUR recipe!</a></h1>
-        <table>
-            
-            <tr>
-                <td>
-                    <h2><label for="cuisine">Cuisine:</label></h2>
-                </td>
-                <td>
-                    <select name="cuisine" id="cuisine">
-                    <option value="Chinese">Chinese</option>
-                    <option value="Indian">Indian</option>
-                    <option value="Malay">Malay</option>
-                    <option value="Others">Others</option>
-                    </select>
-                </td>
-            </tr>
-
-            <tr>
-                <td><h2>Name of Food:</h2></td>
-                <td><input type="text" value=""></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h2><label for="estimated time">Estimated Time:</label></h2>
-                </td>
-                <td>
-                    <select name="estimated time">
-                    <option value="5">around 5 minutes</option>
-                    <option value="10">around 10 minutes</option>
-                    <option value="15">around 15 minutes</option>
-                    <option value="30">around half an hour</option>
-                    <option value="45">around 45 minutes</option>
-                    <option value="60">around an hour</option>
-                    <option value=">60">more than an hour</option>
-                    </select>
-                </td>
-            </tr>
-            
-            <tr>
-                <td><label for="serving size">Serves How Many People:</label></td>
-                <td>
-                    <select name="serving size">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3-5">3 to 5</option>
-                        <option value="5-7">5 to 7</option>
-                        <option value="8-10">8 to 10</option>
-                        <option value=">10">more than 10</option>
-                    </select>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <h2>Ingredients: </td></h2><td><textarea class='special' name='ingredients'>eg. 1 cup of milk, 1 cup of water, 1 tablespoon of sugar</textarea>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <h2>Instructions: </td></h2><td><textarea class='special' name='instructions'>eg. Pour milk into bowl, Pour water into bowl, Mix well</textarea>
-                </td>
-            </tr>
-
-        </table>
-    
+        
         <form action = "{{ url_for('uploaded')}}" method = "POST">
-            
+            <h2>Cuisine: <input name = "cuisine"></h2>
+            <h2>Name of Dish: <input name = "name"></h2>
+            <h2>Estimated Time (in minutes): <input name = "time"></h2>
+            <h2>Serves How Many People: <input name = "servingsize"></h2>
+            <h2>Ingredients: <input name = "ingredients"></h2>
+            <h2>Instructions: <input name = "instructions"></h2>
             <h3><input type='submit' value='Submit Recipe!'></h3>
         </form>
     </div>
